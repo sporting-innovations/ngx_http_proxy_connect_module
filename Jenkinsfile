@@ -25,7 +25,7 @@ pipeline {
     environment {
         APPLICATION_NAME = 'nginx_proxy_connect'
         ARTIFACT_NAME = 'ngx_http_proxy_connect_module'
-        ARTIFACT_EXTENSION = '.o'
+        ARTIFACT_EXTENSION = '.so'
     }
 
     stages {
