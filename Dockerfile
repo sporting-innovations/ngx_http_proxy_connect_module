@@ -12,7 +12,7 @@ ENV NGINX_PROXY_CONNECT_VERSION=${ARG_NGINX_PROXY_CONNECT_VERSION}
 
 COPY docker-entrypoint.sh /opt/bin/docker-entrypoint.sh
 
-RUN yum install -y gcc pcre pcre-devel openssl openssl-devel zlib-devel git \
+RUN yum install -y gcc pcre pcre-devel openssl openssl-devel zlib-devel git patch \
     && groupadd -g 9999 jenkins \
     && adduser -M -g 9999 -u 9999 jenkins \
     && chown -R jenkins:jenkins /opt
