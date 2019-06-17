@@ -41,7 +41,7 @@ pipeline {
                 ansiColor('xterm') {
                     sh '/opt/bin/docker-entrypoint.sh'
 
-                    sh "tar cfz ${APPLICATION_NAME}-${params.NGINX_PROXY_CONNECT_VERSION}.tar.gz /opt/nginx-${NGINX_VERSION}/objs/addon/${ARTIFACT_NAME}/${ARTIFACT_NAME}${ARTIFACT_EXTENSION}"
+                    sh "tar cfz ${APPLICATION_NAME}-${params.NGINX_PROXY_CONNECT_VERSION}.tar.gz /usr/lib64/nginx/modules/${ARTIFACT_NAME}${ARTIFACT_EXTENSION}"
                     sh "chown jenkins:jenkins  ${APPLICATION_NAME}-${params.NGINX_PROXY_CONNECT_VERSION}.tar.gz"
                     stash includes: "${APPLICATION_NAME}-*.tar.gz", name: "${env.APPLICATION_NAME}"
                 }
